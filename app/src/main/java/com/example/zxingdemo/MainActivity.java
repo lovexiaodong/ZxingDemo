@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.xys.libzxing.zxing.activity.CaptureActivity;
 
+import hugo.weaving.DebugLog;
+
 public class MainActivity extends Activity {
     private Button scan;
     public static int SCAN_RESULT = 1;
@@ -28,8 +30,18 @@ public class MainActivity extends Activity {
             }
         });
 
+        testDebug("test", 30);
     }
 
+    @DebugLog
+    public void testDebug(String name, int age ){
+
+        for (int i = 0; i < 100000000; i ++){
+            int k = 00001;
+        }
+
+        Log.i("MainActiviy", "=========== name: " + name + "; age= " + age);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
